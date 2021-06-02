@@ -28,6 +28,14 @@ function App() {
 
       <hr />
 
+      <List />
+    </div>
+  );
+}
+
+function List() {
+  return(
+    <div>
       {list.map(item =>
         <div key={item.objectID}>
           <span>
@@ -39,7 +47,7 @@ function App() {
         </div>
       )}
     </div>
-  );
+  )
 }
 
 export default App;
