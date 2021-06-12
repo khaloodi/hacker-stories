@@ -1,6 +1,8 @@
 import React from 'react'
 
-const list = [
+const App = () => {
+
+  const stories = [
   {
     title: 'React',
     url: 'https://reactjs.org/',
@@ -19,24 +21,27 @@ const list = [
   }
 ]
 
-function App() {
+  const handleChange = (e) => {
+    console.log(e.target.value)
+  }
+
   return (
     <div className="App">
       <h1>Hacker Stories</h1>
       <label htmlFor='search'>Search: </label>
-      <input id='search' type='text' />
+      <input id='search' type='text' onChange={handleChange}/>
 
       <hr />
 
-      <List />
+      <List list = {stories}/>
     </div>
   );
 }
 
-function List() {
+const List = (props) => {
   return(
     <div>
-      {list.map(item =>
+      {props.list.map(item =>
         <div key={item.objectID}>
           <span>
             <a href={item.url}>{item.title}</a>
