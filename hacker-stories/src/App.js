@@ -1,5 +1,6 @@
 import React from 'react'
 import List from './List'
+import Search from './Search'
 
 const App = () => {
 
@@ -22,23 +23,13 @@ const App = () => {
     }
   ]
 
-  const [searchTerm, setSearchTerm] = React.useState('')
-
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value)
-  }
-
   return (
     <div className="App">
       <h1>Hacker Stories</h1>
-      <label htmlFor='search'>Search: </label>
-      <input id='search' type='text' onChange={handleChange}/>
+      
+      <Search />
 
       <hr />
-
-      <p>
-        Seaching for: <strong>{searchTerm}</strong>
-      </p>
 
       <List list = {stories}/>
     </div>
