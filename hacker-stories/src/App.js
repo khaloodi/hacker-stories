@@ -29,9 +29,9 @@ const App = () => {
     setSearchTerm(e.target.value)
   }
 
-  const searchedStories = stories.filter(story => {
+  const searchedStories = stories.filter(story => 
     story.title.toLowerCase().includes(searchTerm.toLowerCase())
-  })
+  )
 
   return (
     <div className="App">
