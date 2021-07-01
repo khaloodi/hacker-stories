@@ -29,10 +29,8 @@ const App = () => {
     setSearchTerm(e.target.value)
   }
 
-  const searchedStories = stories.filter((story) => {
-    return story.title
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase())
+  const searchedStories = stories.filter(story => {
+    story.title.toLowerCase().includes(searchTerm.toLowerCase())
   })
 
   return (
