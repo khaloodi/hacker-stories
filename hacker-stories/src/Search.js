@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Search = () => {
+const Search = (props) => {
   const [searchTerm, setSearchTerm] = React.useState('')
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value)
+
+    props.onSearch(e)
   }
 
   return (
@@ -13,7 +15,7 @@ const Search = () => {
       <input id='search' type='text' onChange={handleChange}/>
 
       <p>
-            Seaching for: <strong>{searchTerm}</strong>
+            Searching for: <strong>{searchTerm}</strong>
       </p>
     </>
   )

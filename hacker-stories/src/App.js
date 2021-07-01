@@ -23,11 +23,15 @@ const App = () => {
     }
   ]
 
+  const handleSearch = e => {
+    console.log(e.target.value)
+  }
+
   return (
     <div className="App">
       <h1>Hacker Stories</h1>
       
-      <Search />
+      <Search onSearch={handleSearch}/>
 
       <hr />
 
