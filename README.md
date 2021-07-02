@@ -1,4 +1,4 @@
-# Reddit Clone React-App
+# Reddit Clone
 
 ## Motivation
 Exercise my React chops.
