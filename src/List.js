@@ -25,7 +25,10 @@ import React from 'react'
 // const List = ({list}) => list.map(item => <Item key={item.objectID} item={item}/>)
 
 // refactored using spread operator to grab all attributes
-const List = ({list}) => list.map(item => <Item key={item.objectID} {...item}/>)
+// const List = ({list}) => list.map(item => <Item key={item.objectID} {...item}/>)
+
+// refactor again to add rest operator, separate out key
+const List = ({list}) => list.map(({objectID, ...item}) => <Item key={item.objectID} {...item}/>)
 
 // const Item = ({item}) => {
 //   return (
