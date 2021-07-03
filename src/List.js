@@ -22,7 +22,10 @@ import React from 'react'
 // }
 
 // concise syntac function w/o return statement
-const List = ({list}) => list.map(item => <Item key={item.objectID} item={item}/>)
+// const List = ({list}) => list.map(item => <Item key={item.objectID} item={item}/>)
+
+// refactored using spread operator to grab all attributes
+const List = ({list}) => list.map(item => <Item key={item.objectID} {...item}/>)
 
 // const Item = ({item}) => {
 //   return (
@@ -38,14 +41,14 @@ const List = ({list}) => list.map(item => <Item key={item.objectID} item={item}/
 // }
 
 // concise syntac function w/o return statement
-const Item = ({item}) => (
+const Item = ({ title, url, author, num_comments, points }) => (
     <div>
       <span>
-        <a href={item.url}>{item.title}</a>
+        <a href={url}>{title}</a>
       </span>
-      <span>{item.author}</span>
-      <span>{item.num_comments}</span>
-      <span>{item.points}</span>
+      <span>{author}</span>
+      <span>{num_comments}</span>
+      <span>{points}</span>
     </div>
 )
 
